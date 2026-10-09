@@ -12,3 +12,4 @@ jobs:
           python-version: "3.10"
       - run: pip install boto3 pytest
       - run: python -m pytest
+      - run: docker build -t backup-app .
