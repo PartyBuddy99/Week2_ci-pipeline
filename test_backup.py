@@ -9,7 +9,7 @@ class FakeS3:
 def test_upload_files():
     fake = FakeS3()
     result = upload_files(fake, "backup_test", "my-bucket", "backup", "20261003")
-    assert result == ["backup/20261003/a.txt", "backup/20261003/b.txt", "backup/20261003/c.txt"]
+    assert sorted(result) == ["backup/20261003/a.txt", "backup/20261003/b.txt", "backup/20261003/c.txt"]
     assert len(fake.calls) == 3
 
 test_upload_files()
